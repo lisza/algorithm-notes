@@ -53,7 +53,7 @@ E.g. 12 & 1 returns 0:
 
 Using the AND operator can only result in a number less tan or equal to the larger of the two inputs.
 
-### How is this useful?
+#### How is this useful?
 To access certain bits! AND can be used with a bit mask to selectively pick out bits. For example, use `a & mask` with `mask = 7` (or `0b111`), to retain only the last 3 bits, or with `mask = 1` to only access the last bit.
 
 In the **Bit Count example** below, we use `count += num & 1` to increment the count when we see a 1 bit in the one's place (instead of a 0 bit, which increments the count by zero). The `& 1` acts as a mask to catch only the last bit. We then right shift by one `num >>= 1` to shift the next bit into the one's place to look at. We do this until the number is 0, i.e. no 1 bits are left due to shifting.
@@ -83,7 +83,7 @@ E.g. 9 | 4 returns 13:
 
 Using OR can only create results that are greater than or equal to the larger of the two integer inputs.
 
-##### How is it useful?
+#### How is it useful?
 To turn on certain bits!
 `80 | 7 = 87` or `0b1010000 | 0b111 = 1010111`
 
@@ -100,7 +100,7 @@ E.g. 5 ^ 4 returns :
 
 If a bit is 0 in both it stays 0 in the result. Note that XOR-ing a number with itself will always result in a 0.
 
-##### How is this useful?
+#### How is this useful?
 XOR can be used to flip bits in combination with an appropriate mask. E.g. `0b1010 ^ 0b1111 = 0101`
 
 In the **parity computation example** below, we use XOR to keep track of the 1 bits seen in a binary number. The goal is to know if it's an even or odd number od 1 bits in the number. Starting with result = 0, for each 1 bit we XOR with, the result flips from 0 to 1 or vice versa. We flip it once or any odd number of times, it ends up 1 (odd). We flip it two or any even number of times, it ends up 0 (even).
@@ -155,5 +155,5 @@ Generalized: `a << b = a * (2^b)`
 Right bit shifting works the same, but reduces the number a divided by 2^b.
 Generalized: `a >> b = a / (2^b)`
 
-##### How is this useful?
+#### How is this useful?
 The `>>` and `<<` operators with a mask can help us in getting a value in a particular part of a number. We shift it some places, usually so that the places we want to access are at the right end, and the access their values by & masking them.
