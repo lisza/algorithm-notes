@@ -70,11 +70,15 @@ end
 ```
 
 ## | OR
-Bitwise 'OR' returns 1 if either bit is 1, otherwise it returns 0.
-The bitwise OR (a|b) operator compares two numbers on a bit level and returns a number where the bits of that number are turned on if either of the corresponding bits of a and b are 1.
+Bitwise 'OR' returns 1 if **either or both** corresponding bits are 1, otherwise it returns 0.
 
-E.g. 9 | 4 returns 13:  
+E.g. 9 | 5 returns 13. 9 | 4 also returns 13:  
 ```
+  1001  9
+| 0101  5
+------
+= 1101  13
+
   1001  9
 | 0100  4
 ------
@@ -88,7 +92,7 @@ To turn on certain bits!
 `80 | 7 = 87` or `0b1010000 | 0b111 = 1010111`
 
 ## ^ XOR
-The XOR (a^b) or Exclusive Or operator compares two numbers on a bit level and returns a number where the bits of that number are turned on if either of the corresponding bits of a and b are 1 but not both.
+**Either but not both!** The XOR (a^b) or Exclusive OR operator compares two numbers on a bit level and returns a number where the bits of that number are turned on if either of the corresponding bits of a and b are 1 but not both.
 
 E.g. 5 ^ 4 returns :  
 ```
